@@ -1,11 +1,11 @@
-/* Fixed Animated Rainbow Background Theme - Aristide.dev */
+/* Fixed Animated Soft Pastel Background Theme - Aristide.dev */
 :root {
     --bg-card: rgba(10, 14, 23, 0.88);
     --bg-card-hover: rgba(18, 25, 40, 0.95);
     --text-primary: #FFFFFF;
     --text-secondary: #E2E8F0;
     --accent-yellow: #FFD700;
-    --accent-cyan: #00E5FF;
+    --accent-cyan: #38BDF8;
     --border-color: rgba(255, 255, 255, 0.18);
     --font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -30,7 +30,7 @@ body {
     background-color: #0A0E17;
 }
 
-/* 1. FIXED BACKGROUND ANIMATED CANVAS (SOLO LO SFONDO CAMBIA COLORE) */
+/* 1. FIXED BACKGROUND ANIMATED CANVAS (COLORI PASTELLO LENTI) */
 #bg-animated {
     position: fixed;
     top: 0;
@@ -38,10 +38,13 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: -2;
-    background: linear-gradient(135deg, #FF0055, #7A00FF, #0066FF, #00E5FF, #00FF66, #FFCC00, #FF0055);
-    background-size: 400% 400%;
-    animation: rainbowMove 8s ease-in-out infinite alternate, hueRotate 10s linear infinite;
+    /* Soft Pastel Rainbow Spectrum */
+    background: linear-gradient(135deg, #A78BFA, #F472B6, #FDBA74, #38BDF8, #6EE7B7, #818CF8, #C4B5FD);
+    background-size: 350% 350%;
+    /* Animazione molto più lenta e rilassante (28s e 40s) */
+    animation: pastelMove 28s ease-in-out infinite alternate, hueRotatePastel 40s linear infinite;
     pointer-events: none;
+    opacity: 0.85;
 }
 
 /* 2. FIXED GRID OVERLAY */
@@ -59,7 +62,7 @@ body {
     pointer-events: none;
 }
 
-@keyframes rainbowMove {
+@keyframes pastelMove {
     0% {
         background-position: 0% 50%;
     }
@@ -71,7 +74,7 @@ body {
     }
 }
 
-@keyframes hueRotate {
+@keyframes hueRotatePastel {
     0% {
         filter: hue-rotate(0deg);
     }
@@ -148,7 +151,7 @@ body {
     border-radius: 30px;
     background: rgba(0, 0, 0, 0.55);
     border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #00FF66;
+    color: #34D399;
     font-size: 0.9rem;
     font-weight: 700;
     margin-bottom: 24px;
@@ -158,9 +161,9 @@ body {
 .status-dot {
     width: 10px;
     height: 10px;
-    background-color: #00FF66;
+    background-color: #34D399;
     border-radius: 50%;
-    box-shadow: 0 0 12px #00FF66;
+    box-shadow: 0 0 12px #34D399;
 }
 
 .hero-title {
@@ -344,7 +347,7 @@ body {
 }
 
 .highlight-item i {
-    color: #00FF66;
+    color: #34D399;
 }
 
 .tech-pills {
