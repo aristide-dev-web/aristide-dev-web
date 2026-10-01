@@ -20,8 +20,8 @@
 ## 🎯 Chi Sono & Visione
 - ⚙️ **Full Stack AI Architect & Tech Founder** specializzato nella progettazione di ecosistemi digitali sicuri, scalabili ed orientati al business.
 - 📱 **Sviluppatore Mobile & Cross-Platform** (Flutter, Dart, Android Nativo, iOS) con app ufficialmente approvate e pubblicate su **Apple App Store** e **Google Play Store**.
+- 🛒 **E-Commerce & Stripe Integration**: Sviluppatore e gestore della piattaforma web **Sicily Palermo Tour** con pagamenti online e sistema prenotazioni automatizzato.
 - 🛡️ **Cybersecurity & Cloud**: Architetture server resilienti, comunicazione di rete WAN, protezione attiva dei dati e ottimizzazione dei costi infrastrutturali.
-- ⚡ **AI-Driven Agility**: Utilizzo dell'Intelligenza Artificiale come catalizzatore per velocizzare l'esecuzione e dominare architetture software avanzate.
 
 ---
 
@@ -36,18 +36,12 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-### ⚙️ **Backend, AI & Security**
+### ⚙️ **Backend, E-Commerce & Security**
+![Stripe](https://img.shields.io/badge/Stripe-6772E5?style=for-the-badge&logo=stripe&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 ![Cybersecurity](https://img.shields.io/badge/Cybersecurity-000000?style=for-the-badge&logo=shield&logoColor=white)
 ![REST API](https://img.shields.io/badge/REST_API-005596?style=for-the-badge&logo=json&logoColor=white)
-![AI Integrations](https://img.shields.io/badge/AI_Driven-8A2BE2?style=for-the-badge&logo=openai&logoColor=white)
-
-### 🧰 **Tools & Infrastructure**
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
-![Android Studio](https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=androidstudio&logoColor=white)
 
 ---
 
@@ -60,23 +54,21 @@
 - 📱 **Live su**:
   - 🍎 [App Store (iOS)](https://apps.apple.com/it/app/petunite/id6768807586)
   - 🤖 [Google Play (Android)](https://play.google.com/store/apps/details?id=com.petping.app)
-- ✨ **Features**: Rilevamento passivo microchip, mappa interattiva in tempo reale e stazioni smart.
 
 ---
 
-### 🛡️ 2. [WAN Security Server](https://github.com/aristide-dev-web/wan-security-server) — *Backend & Security Architecture*
+### 🏝️ 2. Sicily Palermo Tour — *E-Commerce & Booking Platform*
+> Piattaforma E-commerce web gestita per prenotazione tour, itinerari e pagamenti sicuri online.
+
+- 🛠️ **Tech**: Stripe Payments Integration, JavaScript, Cloud Backend, Admin Panel, WhatsApp API.
+- ✨ **Features**: Checkout Stripe sicuro, gestione automatizzata prenotazioni, recensioni e supporto multilingua.
+
+---
+
+### 🛡️ 3. [WAN Security Server](https://github.com/aristide-dev-web/wan-security-server) — *Backend & Security Architecture*
 > Sistema server orientato alla sicurezza delle comunicazioni di rete e protezione infrastrutturale WAN.
 
 - 🛠️ **Tech**: Server Architecture, Networking Security, Encryption, Backend Protocols.
-- ✨ **Features**: Monitoraggio proattivo delle connessioni e prevenzione degli accessi non autorizzati.
-
----
-
-### 🌐 3. [Aristide Portfolio](https://github.com/aristide-dev-web/aristide-portfolio) — *Interactive Web Showcase*
-> Portfolio personale interattivo per la presentazione dei progetti e degli asset tecnici per le aziende.
-
-- 🛠️ **Tech**: HTML5, CSS3, JavaScript, GitHub Pages.
-- 🔗 **Live Demo**: [aristide-dev-web.github.io/aristide-portfolio](https://aristide-dev-web.github.io/aristide-portfolio)
 
 ---
 
