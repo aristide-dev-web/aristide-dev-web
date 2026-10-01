@@ -1,4 +1,4 @@
-/* Fixed Animated Principal Colors Background Theme - Aristide.dev */
+/* Fixed Animated Light Red & Green Theme - Aristide.dev */
 :root {
     --bg-card: rgba(10, 14, 23, 0.88);
     --bg-card-hover: rgba(18, 25, 40, 0.95);
@@ -30,7 +30,7 @@ body {
     background-color: #0A0E17;
 }
 
-/* 1. FIXED BACKGROUND ANIMATED CANVAS (COLORI PRINCIPALI: ROSSO, GIALLO, VERDE, BLU, VIOLA) */
+/* 1. FIXED BACKGROUND ANIMATED CANVAS (ROSSO LEGGERO <-> VERDE) */
 #bg-animated {
     position: fixed;
     top: 0;
@@ -38,13 +38,13 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: -2;
-    /* Spectrum Colori Principali: Rosso -> Giallo -> Verde -> Blu -> Viola */
-    background: linear-gradient(135deg, #FF0044, #FFD700, #00E676, #0066FF, #7C3AED, #FF0044);
-    background-size: 380% 380%;
-    /* Animazione Lenta e Fluida (30s e 45s) */
-    animation: principalMove 30s ease-in-out infinite alternate, hueRotatePrincipal 45s linear infinite;
+    /* Ciclo tra Rosso Leggero e Verde */
+    background: linear-gradient(135deg, #FF6B6B, #FFD700, #00E676, #FF6B6B, #00E676);
+    background-size: 300% 300%;
+    /* Più veloce e dinamico (8s e 12s) */
+    animation: redGreenMove 8s ease-in-out infinite alternate, hueRotateRedGreen 12s linear infinite;
     pointer-events: none;
-    opacity: 0.9;
+    opacity: 0.92;
 }
 
 /* 2. FIXED GRID OVERLAY */
@@ -62,7 +62,7 @@ body {
     pointer-events: none;
 }
 
-@keyframes principalMove {
+@keyframes redGreenMove {
     0% {
         background-position: 0% 50%;
     }
@@ -74,7 +74,7 @@ body {
     }
 }
 
-@keyframes hueRotatePrincipal {
+@keyframes hueRotateRedGreen {
     0% {
         filter: hue-rotate(0deg);
     }
