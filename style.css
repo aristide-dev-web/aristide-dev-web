@@ -1,4 +1,4 @@
-/* Rainbow Moving Animated Theme - Aristide.dev */
+/* Fixed Animated Rainbow Background Theme - Aristide.dev */
 :root {
     --bg-card: rgba(10, 14, 23, 0.88);
     --bg-card-hover: rgba(18, 25, 40, 0.95);
@@ -22,31 +22,41 @@ html {
     color: var(--text-primary);
 }
 
-/* Continuous Rainbow Moving Color Background */
 body {
     line-height: 1.6;
     overflow-x: hidden;
-    background: linear-gradient(135deg, #FF0055, #7A00FF, #0066FF, #00E5FF, #00FF66, #FFCC00, #FF0055);
-    background-size: 300% 300%;
-    animation: rainbowMove 8s ease-in-out infinite alternate, hueRotate 10s linear infinite;
     position: relative;
     min-height: 100vh;
+    background-color: #0A0E17;
 }
 
-/* Background Grid Overlay */
-body::before {
-    content: '';
+/* 1. FIXED BACKGROUND ANIMATED CANVAS (SOLO LO SFONDO CAMBIA COLORE) */
+#bg-animated {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    background: linear-gradient(135deg, #FF0055, #7A00FF, #0066FF, #00E5FF, #00FF66, #FFCC00, #FF0055);
+    background-size: 400% 400%;
+    animation: rainbowMove 8s ease-in-out infinite alternate, hueRotate 10s linear infinite;
+    pointer-events: none;
+}
+
+/* 2. FIXED GRID OVERLAY */
+#bg-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
     background-size: 36px 36px;
     pointer-events: none;
-    z-index: 0;
 }
 
 @keyframes rainbowMove {
@@ -86,7 +96,7 @@ body::before {
     width: 100%;
     z-index: 1000;
     backdrop-filter: blur(16px);
-    background: rgba(10, 14, 23, 0.8);
+    background: rgba(10, 14, 23, 0.82);
     border-bottom: 1px solid var(--border-color);
     padding: 18px 0;
 }
@@ -136,7 +146,7 @@ body::before {
     gap: 8px;
     padding: 8px 20px;
     border-radius: 30px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.55);
     border: 1px solid rgba(255, 255, 255, 0.25);
     color: #00FF66;
     font-size: 0.9rem;
@@ -159,7 +169,8 @@ body::before {
     letter-spacing: -1.5px;
     font-weight: 900;
     margin-bottom: 24px;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    color: #FFFFFF;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .gradient-text {
@@ -171,7 +182,7 @@ body::before {
     margin: 0 auto 36px;
     font-size: 1.25rem;
     color: #FFFFFF;
-    background: rgba(10, 14, 23, 0.75);
+    background: rgba(10, 14, 23, 0.8);
     padding: 28px;
     border-radius: 20px;
     border: 1px solid var(--border-color);
@@ -209,14 +220,14 @@ body::before {
 }
 
 .btn-secondary {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.65);
     color: #FFFFFF;
     border: 1px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(8px);
 }
 
 .btn-secondary:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
     transform: translateY(-3px);
 }
 
@@ -269,7 +280,8 @@ body::before {
 .section-header h2 {
     font-size: 2.6rem;
     margin-bottom: 12px;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    color: #FFFFFF;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 /* Cards & Showcase */
@@ -280,7 +292,7 @@ body::before {
     padding: 36px;
     transition: all 0.3s ease;
     backdrop-filter: blur(18px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
 }
 
 .project-card:hover {
@@ -307,6 +319,7 @@ body::before {
 .project-text h3 {
     font-size: 1.85rem;
     margin-bottom: 14px;
+    color: #FFFFFF;
 }
 
 .project-description {
@@ -474,6 +487,7 @@ body::before {
 .contact-box h2 {
     font-size: 2.6rem;
     margin-bottom: 12px;
+    color: #FFFFFF;
 }
 
 .contact-box p {
