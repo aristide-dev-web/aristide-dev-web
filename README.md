@@ -19,7 +19,7 @@
 
 ## 🎯 Chi Sono & Visione
 - ⚙️ **Full Stack AI Architect & Tech Founder** specializzato nella progettazione di ecosistemi digitali sicuri, scalabili ed orientati al business.
-- 📱 **Sviluppatore Mobile & Cross-Platform** (Flutter, Dart, Android Nativo, iOS) con app ufficialmente approvate e pubblicate su **Apple App Store** e **Google Play Store**.
+- 📱 **Sviluppatore Mobile & Cross-Platform** (Flutter, Dart, Android Nativo, iOS): Creatore dell'app **Pet Unite** (Animali Smarriti, Calendario Smart, Mini-Social e Pet-Sitter Finder) pubblicata su **Apple App Store** e **Google Play Store**.
 - 🛒 **E-Commerce & Stripe Integration**: Sviluppatore e gestore della piattaforma web **Sicily Palermo Tour** con pagamenti online e sistema prenotazioni automatizzato.
 - 🛡️ **Cybersecurity & Cloud**: Architetture server resilienti, comunicazione di rete WAN, protezione attiva dei dati e ottimizzazione dei costi infrastrutturali.
 
@@ -47,10 +47,10 @@
 
 ## 🌟 Progetti & Technical Assets (Showcase)
 
-### 🐾 1. [Pet Unite](https://github.com/aristide-dev-web/Pet-unite) — *Protezione Animale & Tecnologia Futuristica*
-> Piattaforma mobile per la tutela animale con tracciamento smart, pubblicata ufficialmente sugli Store.
+### 🐾 1. [Pet Unite](https://github.com/aristide-dev-web/Pet-unite) — *Protezione Animale, Mini-Social & Pet-Sitter Finder*
+> Ecosistema mobile Flutter completo per il mondo pet, con tracciamento animali smarriti, calendario intelligente, chat/mini-social tra proprietari e ricerca pet-sitter.
 
-- 🛠️ **Tech**: Flutter, Dart, Real-time Sensor Tracking, Firebase.
+- 🛠️ **Tech**: Flutter, Dart, Firebase Chat, Smart Calendar, Real-time Sensor Tracking, Google Maps API.
 - 📱 **Live su**:
   - 🍎 [App Store (iOS)](https://apps.apple.com/it/app/petunite/id6768807586)
   - 🤖 [Google Play (Android)](https://play.google.com/store/apps/details?id=com.petping.app)
