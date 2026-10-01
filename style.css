@@ -1,11 +1,11 @@
-/* Fixed Animated Soft Pastel Background Theme - Aristide.dev */
+/* Fixed Animated Principal Colors Background Theme - Aristide.dev */
 :root {
     --bg-card: rgba(10, 14, 23, 0.88);
     --bg-card-hover: rgba(18, 25, 40, 0.95);
     --text-primary: #FFFFFF;
     --text-secondary: #E2E8F0;
     --accent-yellow: #FFD700;
-    --accent-cyan: #38BDF8;
+    --accent-cyan: #00E5FF;
     --border-color: rgba(255, 255, 255, 0.18);
     --font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -30,7 +30,7 @@ body {
     background-color: #0A0E17;
 }
 
-/* 1. FIXED BACKGROUND ANIMATED CANVAS (COLORI PASTELLO LENTI) */
+/* 1. FIXED BACKGROUND ANIMATED CANVAS (COLORI PRINCIPALI: ROSSO, GIALLO, VERDE, BLU, VIOLA) */
 #bg-animated {
     position: fixed;
     top: 0;
@@ -38,13 +38,13 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: -2;
-    /* Soft Pastel Rainbow Spectrum */
-    background: linear-gradient(135deg, #A78BFA, #F472B6, #FDBA74, #38BDF8, #6EE7B7, #818CF8, #C4B5FD);
-    background-size: 350% 350%;
-    /* Animazione molto più lenta e rilassante (28s e 40s) */
-    animation: pastelMove 28s ease-in-out infinite alternate, hueRotatePastel 40s linear infinite;
+    /* Spectrum Colori Principali: Rosso -> Giallo -> Verde -> Blu -> Viola */
+    background: linear-gradient(135deg, #FF0044, #FFD700, #00E676, #0066FF, #7C3AED, #FF0044);
+    background-size: 380% 380%;
+    /* Animazione Lenta e Fluida (30s e 45s) */
+    animation: principalMove 30s ease-in-out infinite alternate, hueRotatePrincipal 45s linear infinite;
     pointer-events: none;
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 /* 2. FIXED GRID OVERLAY */
@@ -62,7 +62,7 @@ body {
     pointer-events: none;
 }
 
-@keyframes pastelMove {
+@keyframes principalMove {
     0% {
         background-position: 0% 50%;
     }
@@ -74,7 +74,7 @@ body {
     }
 }
 
-@keyframes hueRotatePastel {
+@keyframes hueRotatePrincipal {
     0% {
         filter: hue-rotate(0deg);
     }
@@ -151,7 +151,7 @@ body {
     border-radius: 30px;
     background: rgba(0, 0, 0, 0.55);
     border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #34D399;
+    color: #00E676;
     font-size: 0.9rem;
     font-weight: 700;
     margin-bottom: 24px;
@@ -161,9 +161,9 @@ body {
 .status-dot {
     width: 10px;
     height: 10px;
-    background-color: #34D399;
+    background-color: #00E676;
     border-radius: 50%;
-    box-shadow: 0 0 12px #34D399;
+    box-shadow: 0 0 12px #00E676;
 }
 
 .hero-title {
@@ -347,7 +347,7 @@ body {
 }
 
 .highlight-item i {
-    color: #34D399;
+    color: #00E676;
 }
 
 .tech-pills {
