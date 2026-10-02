@@ -8,6 +8,7 @@
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
   [![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://aristide-dev-web.github.io/aristide-portfolio)
   [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:neosdeveloper1344@gmail.com)
+  [![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/393339992884)
 
   ---
 
@@ -47,7 +48,7 @@
 
 ---
 
-## 🌟 Progetti in Evidenza (Showcase)
+## 🌟 Progetti in Evidenza
 
 ### 🐾 1. [Pet Unite](https://github.com/aristide-dev-web/Pet-unite) — *Protezione Animale, Mini-Social & Pet-Sitter Finder*
 > Ecosistema mobile Flutter completo per il mondo pet: segnalazione e ricerca in tempo reale di animali smarriti su mappa, calendario intelligente, chat/mini-social tra proprietari e ricerca pet-sitter.
@@ -86,6 +87,7 @@
 - 💼 **LinkedIn**: [Profilo LinkedIn](https://linkedin.com)
 - 🌐 **Portfolio**: [aristide-dev-web.github.io/aristide-portfolio](https://aristide-dev-web.github.io/aristide-portfolio)
 - ✉️ **Email**: `neosdeveloper1344@gmail.com`
+- 💬 **WhatsApp**: `+39 333 999 2884` ([Scrivimi su WhatsApp](https://wa.me/393339992884))
 
 ---
 
