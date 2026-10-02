@@ -5,7 +5,6 @@
 
   <br/><br/>
 
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
   [![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://aristide-dev-web.github.io/aristide-portfolio)
   [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:neosdeveloper1344@gmail.com)
   [![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/393339992884)
@@ -84,7 +83,6 @@
 
 ## 📫 Contatti
 
-- 💼 **LinkedIn**: [Profilo LinkedIn](https://linkedin.com)
 - 🌐 **Portfolio**: [aristide-dev-web.github.io/aristide-portfolio](https://aristide-dev-web.github.io/aristide-portfolio)
 - ✉️ **Email**: `neosdeveloper1344@gmail.com`
 - 💬 **WhatsApp**: [Scrivimi su WhatsApp](https://wa.me/393339992884)
