@@ -87,7 +87,7 @@
 - 💼 **LinkedIn**: [Profilo LinkedIn](https://linkedin.com)
 - 🌐 **Portfolio**: [aristide-dev-web.github.io/aristide-portfolio](https://aristide-dev-web.github.io/aristide-portfolio)
 - ✉️ **Email**: `neosdeveloper1344@gmail.com`
-- 💬 **WhatsApp**: `+39 333 999 2884` ([Scrivimi su WhatsApp](https://wa.me/393339992884))
+- 💬 **WhatsApp**: [Scrivimi su WhatsApp](https://wa.me/393339992884)
 
 ---
 
