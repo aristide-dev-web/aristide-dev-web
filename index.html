@@ -130,8 +130,36 @@
                             </h4>
 
                             <!-- Container per Immagini e Codice di Pet Unite -->
-                            <div id="pet-unite-media" class="media-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
-                                <!-- Gli snippet di codice e le immagini inseriti compariranno qui -->
+                            <div id="pet-unite-media" class="media-container" style="display: flex; flex-direction: column; gap: 16px;">
+                                <div class="code-snippet-box" style="background: rgba(0,0,0,0.6); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; overflow-x: auto;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; color: var(--accent-yellow); font-size: 0.9rem; font-weight: 700;">
+                                        <span><i class="fab fa-flutter"></i> Flutter & Dart — Background Notification Handler ("App Killed")</span>
+                                        <small style="color: var(--text-secondary);">lib/notific.dart</small>
+                                    </div>
+                                    <pre style="margin: 0; font-family: monospace; font-size: 0.88rem; color: #E2E8F0; line-height: 1.5;"><code>@pragma('vm:entry-point')
+Future&lt;void&gt; firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  final localNotif = FlutterLocalNotificationsPlugin();
+
+  final data = message.data;
+  final bool isPetsitting = data['category'] == 'petsitting';
+
+  final androidDetails = AndroidNotificationDetails(
+    isPetsitting ? 'petsitting_channel' : 'high_importance_channel',
+    isPetsitting ? 'Notifiche Petsitting' : 'Notifiche Importanti',
+    importance: Importance.max,
+    priority: Priority.high,
+    color: isPetsitting ? const Color(0xFF00AAA0) : const Color(0xFF6366F1),
+  );
+
+  await localNotif.show(
+    message.hashCode,
+    data['title'] ?? 'PetUnite',
+    data['text'] ?? 'Nuova attività',
+    NotificationDetails(android: androidDetails),
+  );
+}</code></pre>
+                                </div>
                             </div>
                         </div>
 
