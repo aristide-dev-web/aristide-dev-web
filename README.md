@@ -76,14 +76,7 @@
 ## 📊 GitHub Analytics
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=aristide-dev-web&show_icons=true&theme=radial&hide_border=true" alt="Aristide's GitHub Stats" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=aristide-dev-web&layout=compact&theme=radial&hide_border=true" alt="Top Languages" width="48%" />
-</div>
-
-<br/>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aristide-dev-web&theme=radial&hide_border=true" alt="GitHub Streak" width="97%" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aristide-dev-web&theme=dark&hide_border=true" alt="GitHub Streak" width="97%" />
 </div>
 
 ---
