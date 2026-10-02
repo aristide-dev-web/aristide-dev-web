@@ -1,7 +1,9 @@
 <div align="center">
 
-  <!-- Animated Gradient Header Banner -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,18,24,30,36&height=220&section=header&text=ARISTIDE&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Full%20Stack%20AI%20Architect%20%26%20Tech%20Founder&descSize=20&descAlignY=62&descAlign=50" width="100%" alt="ARISTIDE Banner"/>
+  <!-- Animated Typing Header Banner -->
+  <img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=700&size=26&pause=1000&color=38BDF8&width=650&lines=Mobile+%26+Full-Stack+Software+Developer;Passionate+Builder+%26+Problem+Solver;Developer+of+Pet+Unite+(App+Store+%26+Play+Store)" alt="Aristide Banner" />
+
+  <br/><br/>
 
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
   [![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://aristide-dev-web.github.io/aristide-portfolio)
@@ -9,19 +11,19 @@
 
   ---
 
-  ### **Cybersecurity, Scalability & System Optimization**
+  ### **Mobile & Full-Stack Software Developer | Passionate Builder & Problem Solver**
 
-  *In qualità di **Full Stack AI Architect**, integro **AI-Driven Agility**, **sicurezza nativa** e **scalabilità** per progettare software ad alte prestazioni e ottimizzare i costi operativi dell'intera infrastruttura.*
+  *Creo applicazioni moderne e prodotti reali. Specializzato nello sviluppo mobile cross-platform (**Flutter & Dart**) e nella progettazione di architetture web ed e-commerce sicure con integrazione di strumenti IA.*
 
 </div>
 
 <br/>
 
-## 🎯 Chi Sono & Visione
-- ⚙️ **Full Stack AI Architect & Tech Founder** specializzato nella progettazione di ecosistemi digitali sicuri, scalabili ed orientati al business.
-- 📱 **Sviluppatore Mobile & Cross-Platform** (Flutter, Dart, Android Nativo, iOS): Creatore dell'app **Pet Unite** (Mappa Animali Smarriti, Calendario Smart, Mini-Social e Pet-Sitter Finder) pubblicata su **Apple App Store** e **Google Play Store**.
-- 🛒 **E-Commerce & Stripe Integration**: Sviluppatore e gestore della piattaforma web **Sicily Palermo Tour** con pagamenti online e sistema prenotazioni automatizzato.
-- 🛡️ **Cybersecurity & Cloud**: Architetture server resilienti, comunicazione di rete WAN, protezione attiva dei dati e ottimizzazione dei costi infrastrutturali.
+## 🎯 Chi Sono & Cosa Faccio
+- 📱 **Mobile & Full-Stack Developer**: Sviluppatore autonomo, appassionato ed orientato alla creazione di soluzioni software reali e funzionanti.
+- 🚀 **Autore di Pet Unite (Live su App Store & Play Store)**: Ecosistema mobile Flutter completo (Mappa Animali Smarriti, Calendario Smart, Mini-Social e Pet-Sitter Finder) approvato e pubblicato sugli Store ufficiali Apple e Google.
+- 🛒 **E-Commerce & Stripe Integration**: Sviluppatore e gestore della piattaforma web **Sicily Palermo Tour** con pagamenti online sicuri e sistema prenotazioni automatizzato.
+- 🛡️ **Cybersecurity & Backend**: Interesse e pratica nella gestione di server resilienti, comunicazione di rete WAN e protezione dei dati.
 
 ---
 
@@ -45,7 +47,7 @@
 
 ---
 
-## 🌟 Progetti & Technical Assets (Showcase)
+## 🌟 Progetti in Evidenza (Showcase)
 
 ### 🐾 1. [Pet Unite](https://github.com/aristide-dev-web/Pet-unite) — *Protezione Animale, Mini-Social & Pet-Sitter Finder*
 > Ecosistema mobile Flutter completo per il mondo pet: segnalazione e ricerca in tempo reale di animali smarriti su mappa, calendario intelligente, chat/mini-social tra proprietari e ricerca pet-sitter.
@@ -61,7 +63,6 @@
 > Piattaforma E-commerce web gestita per prenotazione tour, itinerari e pagamenti sicuri online.
 
 - 🛠️ **Tech**: Stripe Payments Integration, JavaScript, Cloud Backend, Admin Panel, WhatsApp API.
-- ✨ **Features**: Checkout Stripe sicuro, gestione automatizzata prenotazioni, recensioni e supporto multilingua.
 
 ---
 
@@ -96,5 +97,5 @@
 ---
 
 <div align="center">
-  <sub><i>Aristide — Cybersecurity, Scalability & System Optimization</i></sub>
+  <sub><i>Aristide — Passionate Builder & Problem Solver</i></sub>
 </div>
