@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aristide | Full-Stack & Mobile Developer</title>
-    <meta name="description" content="Portfolio di Aristide - Full-Stack & Mobile Developer specializzato in Flutter, Android, iOS, E-Commerce Stripe e Cybersecurity.">
+    <title>Aristide | Mobile & Full-Stack Developer</title>
+    <meta name="description" content="Portfolio di Aristide - Mobile & Full-Stack Developer specializzato in Flutter, Android, iOS, E-Commerce Stripe e Cybersecurity.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +26,11 @@
                 <a href="#showcase">I Progetti</a>
                 <a href="#stack">Tech Stack</a>
                 <a href="#contact" class="btn btn-outline">Contattami</a>
+                <!-- Google Translate Dropdown nella Navbar -->
+                <div class="lang-nav-box">
+                    <i class="fas fa-globe"></i>
+                    <div id="google_translate_element_nav"></div>
+                </div>
             </nav>
         </div>
     </header>
@@ -33,9 +38,18 @@
     <!-- Hero Section / Chi Sono -->
     <section id="about" class="hero">
         <div class="container hero-container">
+
+            <!-- Banner Seleziona Lingua / Language Selector -->
+            <div class="lang-welcome-box">
+                <i class="fas fa-language"></i>
+                <span>Scegli Lingua / Select Language:</span>
+                <div id="google_translate_element"></div>
+            </div>
+
             <div class="hero-badge">
                 <span class="status-dot"></span> Disponibile per nuove opportunità
             </div>
+
             <h1 class="hero-title">
                 Mobile & Full-Stack Developer <br>
                 <span class="gradient-text">Passionate Builder & Problem Solver</span>
@@ -64,43 +78,27 @@
                 <div class="project-badge">📱 App In Produzione (Live Store)</div>
                 <div class="project-content">
                     <div class="project-text">
-                        <h3>🐾 Pet Unite - L'Ecosistema Definitivo per la Protezione Animale</h3>
+                        <h3>🐾 Pet Unite — Protezione Animale, Mini-Social & Pet-Sitter Finder</h3>
                         <p class="project-description">
-                            Piattaforma rivoluzionaria sviluppata interamente da me come <strong>sviluppatore solista in soli 3-4 mesi</strong>. Rappresenta una soluzione cross-platform d'eccellenza in <strong>Flutter & Dart</strong>, ottimizzata per iOS e Android con architettura reattiva e zero costi di licenza di terze parti.
+                            Ecosistema mobile completo sviluppato in <strong>Flutter & Dart</strong> per la tutela e la gestione a 360° del mondo animale. Unisce la segnalazione e la ricerca in tempo reale di <strong>animali smarriti</strong> con mappa interattiva, un <strong>calendario intelligente</strong> per la salute dei pet, una <strong>community mini-social con chat integrata</strong> tra proprietari e un sistema di <strong>ricerca pet-sitter</strong> nella propria zona.
                         </p>
 
-                        <!-- Punti di forza architetturali -->
                         <div class="project-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div><strong>Calendario Intelligente & Notifiche "App Killata"</strong>: Sistema di promemoria avanzato progettato per suonare anche ad applicazione chiusa forzatamente dal sistema, combinando Firebase e modulo di notifiche locali.</div>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div><strong>Mappe Native & Geolocalizzazione</strong>: Integrazione diretta con le mappe native dei telefoni (Apple & Google) per garantire performance massime e zero costi di licenza.</div>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div><strong>Messaggistica Real-time & AI Integrata</strong>: Chat proprietaria avanzata funzionante anche ad app chiusa e assistente AI dedicato per la gestione del pet.</div>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div><strong>Psicologia dell'Interfaccia & 3 Home Personali</strong>: Palette cromatica SOS smarriti studiata per trasmettere tranquillità ed urgenza, con 3 interfacce modellate sulle varie necessità dell'utente.</div>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div><strong>Pet Dex, Mini-Social & Modulo Pet Sitting (Stripe)</strong>: Gamification dell'educazione pet, social network con bacheche e sistema di gestione/pagamento Pet Sitter via Stripe.</div>
-                            </div>
+                            <div class="highlight-item"><i class="fas fa-check-circle"></i> <strong>Segnalazione & Mappa Smarrimenti</strong>: Ricerca e mappa interattiva in tempo reale per ritrovare gli animali</div>
+                            <div class="highlight-item"><i class="fas fa-check-circle"></i> <strong>Calendario Intelligente & Promemoria</strong>: Gestione salute, vaccini e appuntamenti pet</div>
+                            <div class="highlight-item"><i class="fas fa-check-circle"></i> <strong>Mini-Social & Chat Integrata</strong>: Rete della community per comunicare e chattare tra proprietari</div>
+                            <div class="highlight-item"><i class="fas fa-check-circle"></i> <strong>Ricerca & Booking Pet-Sitter</strong>: Trova e naviga profili di pet-sitter qualificati nella tua zona</div>
+                            <div class="highlight-item"><i class="fas fa-check-circle"></i> <strong>100% Cross-Platform (iOS & Android)</strong>: Pubblicata ed approvata dagli Store Ufficiali Apple & Google</div>
                         </div>
 
                         <div class="tech-pills">
                             <span>Flutter</span>
                             <span>Dart</span>
-                            <span>App-Killed Notifications</span>
                             <span>Firebase Chat</span>
-                            <span>Native Apple/Google Maps</span>
-                            <span>Stripe Payments</span>
-                            <span>AI Assistant</span>
+                            <span>Smart Calendar</span>
+                            <span>Google Maps API</span>
+                            <span>Mini-Social</span>
+                            <span>Pet-Sitter Finder</span>
                         </div>
 
                         <div class="store-buttons" style="margin-bottom: 30px;">
@@ -326,6 +324,26 @@ Future&lt;void&gt; firebaseMessagingBackgroundHandler(RemoteMessage message) asy
             <p>&copy; 2026 Aristide. All rights reserved. Sviluppato con passione per l'innovazione.</p>
         </div>
     </footer>
+
+    <!-- Script Google Translate Ufficiale Integrato -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'it',
+                includedLanguages: 'en,it,es,de,fr,ja,zh-CN,ar',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+
+            new google.translate.TranslateElement({
+                pageLanguage: 'it',
+                includedLanguages: 'en,it,es,de,fr,ja,zh-CN,ar',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element_nav');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script src="script.js"></script>
 </body>
