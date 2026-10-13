@@ -240,9 +240,34 @@ Future&lt;void&gt; firebaseMessagingBackgroundHandler(RemoteMessage message) asy
                                     </div>
                                 </div>
 
-                                <!-- Area Frame Scorrevole Reale -->
-                                <div style="height: 420px; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; border-radius: 0 0 16px 16px;">
-                                    <iframe src="https://aristide-dev-web.github.io/sicily-palermo-tour/" style="width: 100%; height: 900px; border: none; background: #FFFFFF;" title="Sicily Palermo Tour Live Preview"></iframe>
+                                <!-- Area Frame Scorrevole Reale con Fallback Interattivo -->
+                                <div style="height: 420px; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; border-radius: 0 0 16px 16px; background: #0B0F17; padding: 20px;">
+                                    <iframe src="https://aristide-dev-web.github.io/sicily-palermo-tour/" style="width: 100%; height: 800px; border: none; background: #0B0F17;" title="Sicily Palermo Tour Live Preview" onerror="this.style.display='none'; document.getElementById('spt-fallback-view').style.display='block';"></iframe>
+
+                                    <!-- Fallback Visivo Interattivo per Palermo Tour -->
+                                    <div id="spt-fallback-view" style="display: flex; flex-direction: column; gap: 16px;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
+                                            <span style="color: var(--accent-yellow); font-weight: 800; font-size: 1.1rem;">🏝️ Sicily Palermo Tour — Catalogo & Escursioni</span>
+                                            <span style="background: rgba(103, 114, 229, 0.2); color: #6772E5; border: 1px solid rgba(103, 114, 229, 0.4); padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 700;"><i class="fab fa-stripe"></i> Stripe Enabled</span>
+                                        </div>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+                                            <div style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px; text-align: center;">
+                                                <img src="img/spt_tour1.jpg" alt="Palermo Centro Storico Tour" style="width: 100%; height: 130px; object-fit: cover; border-radius: 8px; margin-bottom: 8px;">
+                                                <h5 style="color: #FFFFFF; font-size: 0.95rem; margin-bottom: 4px;">Palermo Centro & Street Food</h5>
+                                                <p style="color: var(--text-secondary); font-size: 0.8rem;">Tour guidato tra i mercati storici e monumenti di Palermo.</p>
+                                            </div>
+                                            <div style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px; text-align: center;">
+                                                <img src="img/spt_tour2.png" alt="Escursioni Mare & Spiagge" style="width: 100%; height: 130px; object-fit: cover; border-radius: 8px; margin-bottom: 8px;">
+                                                <h5 style="color: #FFFFFF; font-size: 0.95rem; margin-bottom: 4px;">Escursioni Costa & Mare</h5>
+                                                <p style="color: var(--text-secondary); font-size: 0.8rem;">Mondello, Cefalù, San Vito Lo Capo e Riserva dello Zingaro.</p>
+                                            </div>
+                                            <div style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px; text-align: center;">
+                                                <img src="img/spt_tour3.webp" alt="Booking & Stripe Checkout" style="width: 100%; height: 130px; object-fit: cover; border-radius: 8px; margin-bottom: 8px;">
+                                                <h5 style="color: #FFFFFF; font-size: 0.95rem; margin-bottom: 4px;">Prenotazioni & Payment Engine</h5>
+                                                <p style="color: var(--text-secondary); font-size: 0.8rem;">Checkout immediato con pre-autorizzazione carta Stripe.</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
