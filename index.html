@@ -218,25 +218,31 @@ Future&lt;void&gt; firebaseMessagingBackgroundHandler(RemoteMessage message) asy
                             </a>
                         </div>
 
-                        <!-- Sezione Galleria Visiva E-Commerce & Stripe -->
+                        <!-- Sezione Finestra Browser con Pagina Scorrevole Live -->
                         <div class="media-section" style="border-top: 1px solid var(--border-color); padding-top: 24px; margin-top: 20px;">
                             <h4 style="font-size: 1.35rem; color: var(--accent-yellow); margin-bottom: 16px;">
-                                📸 Galleria Piattaforma E-Commerce & Modulo Stripe
+                                🌐 Anteprima Pagina Web Scorrevole & Modulo Booking
                             </h4>
 
-                            <!-- Galleria Screenshot & Immagini Reali E-Commerce -->
-                            <div class="screenshots-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-                                <div class="screenshot-card" style="background: rgba(0,0,0,0.5); border: 1px solid var(--border-color); border-radius: 16px; padding: 12px; text-align: center;">
-                                    <img src="img/spt_tour1.jpg" alt="Sicily Palermo Tour Platform" style="width: 100%; max-height: 240px; border-radius: 12px; object-fit: cover; box-shadow: 0 8px 20px rgba(0,0,0,0.5);">
-                                    <p style="font-size: 0.88rem; color: var(--accent-yellow); margin-top: 10px; font-weight: 700;"><i class="fas fa-umbrella-beach"></i> Piattaforma Tour & Itinerari</p>
+                            <!-- Container Finestra Browser con Pagina Scorrevole dentro -->
+                            <div class="scrolling-page-box" style="border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; background: rgba(10, 14, 23, 0.9); box-shadow: 0 15px 35px rgba(0,0,0,0.6);">
+
+                                <!-- Header Browser -->
+                                <div style="background: rgba(18, 25, 40, 0.95); padding: 10px 16px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--border-color);">
+                                    <div style="display: flex; gap: 6px;">
+                                        <span style="width: 10px; height: 10px; background-color: #FF5F56; border-radius: 50%; display: inline-block;"></span>
+                                        <span style="width: 10px; height: 10px; background-color: #FFBD2E; border-radius: 50%; display: inline-block;"></span>
+                                        <span style="width: 10px; height: 10px; background-color: #27C93F; border-radius: 50%; display: inline-block;"></span>
+                                    </div>
+                                    <div style="flex: 1; background: rgba(0,0,0,0.5); border-radius: 6px; padding: 4px 12px; font-size: 0.82rem; font-family: monospace; color: var(--accent-yellow); display: flex; align-items: center; gap: 6px;">
+                                        <i class="fas fa-lock" style="color: #00E676; font-size: 0.7rem;"></i>
+                                        <span>https://aristide-dev-web.github.io/sicily-palermo-tour</span>
+                                    </div>
                                 </div>
-                                <div class="screenshot-card" style="background: rgba(0,0,0,0.5); border: 1px solid var(--border-color); border-radius: 16px; padding: 12px; text-align: center;">
-                                    <img src="img/spt_tour2.png" alt="Stripe Payment Engine" style="width: 100%; max-height: 240px; border-radius: 12px; object-fit: cover; box-shadow: 0 8px 20px rgba(0,0,0,0.5);">
-                                    <p style="font-size: 0.88rem; color: var(--accent-yellow); margin-top: 10px; font-weight: 700;"><i class="fab fa-stripe"></i> Checkout & Pagamenti Stripe</p>
-                                </div>
-                                <div class="screenshot-card" style="background: rgba(0,0,0,0.5); border: 1px solid var(--border-color); border-radius: 16px; padding: 12px; text-align: center;">
-                                    <img src="img/spt_tour3.webp" alt="Gestione Prenotazioni" style="width: 100%; max-height: 240px; border-radius: 12px; object-fit: cover; box-shadow: 0 8px 20px rgba(0,0,0,0.5);">
-                                    <p style="font-size: 0.88rem; color: var(--accent-yellow); margin-top: 10px; font-weight: 700;"><i class="fas fa-calendar-check"></i> Booking & Piattaforma Web</p>
+
+                                <!-- Area Frame Scorrevole Reale -->
+                                <div style="height: 420px; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; border-radius: 0 0 16px 16px;">
+                                    <iframe src="https://aristide-dev-web.github.io/sicily-palermo-tour" style="width: 100%; height: 900px; border: none; background: #FFFFFF;" title="Sicily Palermo Tour Live Preview"></iframe>
                                 </div>
                             </div>
                         </div>
