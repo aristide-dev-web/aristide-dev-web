@@ -59,7 +59,7 @@
 
 ---
 
-### 🏝️ 2. Sicily Palermo Tour — *E-Commerce & Booking Platform*
+### 🏝️ 2. [Sicily Palermo Tour](https://github.com/aristide-dev-web/sicily-palermo-tour) — *E-Commerce & Booking Platform*
 > Piattaforma E-commerce web gestita per prenotazione tour, itinerari e pagamenti sicuri online.
 
 - 🛠️ **Tech**: Stripe Payments Integration, JavaScript, Cloud Backend, Admin Panel, WhatsApp API.
