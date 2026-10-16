@@ -31,7 +31,7 @@ body {
     top: 0 !important; /* Previene lo spostamento di Google Translate */
 }
 
-/* 1. FIXED BACKGROUND ANIMATED CANVAS (ROSSO LEGGERO <-> VERDE) */
+/* 1. FIXED CYBER BACKGROUND CANVAS (DEEP OBSIDIAN + NEON GLOWS) */
 #bg-animated {
     position: fixed;
     top: 0;
@@ -39,14 +39,15 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: -2;
-    background: linear-gradient(135deg, #FF6B6B, #FFD700, #00E676, #FF6B6B, #00E676);
-    background-size: 300% 300%;
-    animation: redGreenMove 8s ease-in-out infinite alternate, hueRotateRedGreen 12s linear infinite;
+    background-color: #0A0E17;
+    background-image:
+        radial-gradient(circle at 15% 20%, rgba(0, 229, 255, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 55%, rgba(0, 230, 118, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
     pointer-events: none;
-    opacity: 0.92;
 }
 
-/* 2. FIXED GRID OVERLAY */
+/* 2. FIXED CYBER MATRIX GRID OVERLAY */
 #bg-grid {
     position: fixed;
     top: 0;
@@ -55,9 +56,9 @@ body {
     height: 100vh;
     z-index: -1;
     background-image:
-        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-    background-size: 36px 36px;
+        linear-gradient(rgba(0, 229, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 229, 255, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
     pointer-events: none;
 }
 
