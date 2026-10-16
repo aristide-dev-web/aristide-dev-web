@@ -6,6 +6,7 @@
     <title>Curriculum Vitae - Antonio Scagnetti</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         :root {
             --primary: #0F172A;
@@ -460,9 +461,14 @@
     <!-- Bar per Stampa/PDF (Visibile solo a schermo) -->
     <div class="no-print-bar">
         <span><i class="fas fa-file-pdf" style="color: #00E676; font-size: 1.2rem;"></i> Curriculum Vitae Professionale — Antonio Scagnetti</span>
-        <button class="print-btn" onclick="window.print()">
-            <i class="fas fa-print"></i> Stampa o Salva in PDF
-        </button>
+        <div style="display: flex; gap: 10px;">
+            <button class="print-btn" onclick="downloadPdfDirect()" style="background: linear-gradient(135deg, #00E676, #00B0FF); color: #0F172A; border: none; font-weight: 800;">
+                <i class="fas fa-download"></i> Scarica PDF Diretto
+            </button>
+            <button class="print-btn" onclick="window.print()" style="background: rgba(255, 255, 255, 0.1); border: 1px solid var(--border-color);">
+                <i class="fas fa-print"></i> Stampa
+            </button>
+        </div>
     </div>
 
     <!-- CV Main Container -->
@@ -634,5 +640,20 @@
 
     </div>
 
+    <script>
+        function downloadPdfDirect() {
+            const element = document.querySelector('.cv-container');
+            const opt = {
+                margin:       [6, 6, 6, 6],
+                filename:     'Curriculum_Vitae_Antonio_Scagnetti.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true, logging: false },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            // Genera e scarica direttamente il file nella cartella Download!
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
 </body>
 </html>
