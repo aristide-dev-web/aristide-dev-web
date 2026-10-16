@@ -13,7 +13,7 @@
 
   ### **Mobile & Full-Stack Software Developer | Passionate Builder & Problem Solver**
 
-  *Creo applicazioni moderne e prodotti reali. Specializzato nello sviluppo mobile cross-platform (**Flutter & Dart**) e nella progettazione di architetture web ed e-commerce sicure con integrazione di strumenti IA.*
+  *Sviluppatore Mobile & Full-Stack appassionato. Utilizzo l'Intelligenza Artificiale e le migliori tecnologie moderne (Flutter, Swift, Python, Node.js) per trasformare idee in prodotti reali, sicuri e scalabili.*
 
 </div>
 
