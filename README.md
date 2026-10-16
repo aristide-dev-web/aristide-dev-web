@@ -11,7 +11,7 @@
 
   ---
 
-  ### **Mobile & Full-Stack Software Developer | Passionate Builder & Problem Solver**
+  ### **AI-Driven Mobile & Full-Stack Developer | iOS, Android, E-Commerce & AI Code Building**
 
   *Sviluppatore Mobile & Full-Stack appassionato. Utilizzo l'Intelligenza Artificiale e le migliori tecnologie moderne (Flutter, Swift, Python, Node.js) per trasformare idee in prodotti reali, sicuri e scalabili.*
 
