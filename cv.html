@@ -111,6 +111,23 @@
             flex-wrap: wrap;
         }
 
+        .header-avatar-box {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent-gold);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            flex-shrink: 0;
+        }
+
+        .header-avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
         .header-title-box h1 {
             font-size: 2.3rem;
             font-weight: 900;
@@ -433,6 +450,9 @@
                         <span class="role-badge"><i class="fab fa-stripe"></i> Stripe E-Commerce</span>
                         <span class="role-badge"><i class="fab fa-python"></i> Python & Security</span>
                     </div>
+                </div>
+                <div class="header-avatar-box">
+                    <img src="img/profile.jpg" alt="Antonio Scagnetti" class="header-avatar-img">
                 </div>
             </div>
 
