@@ -8,12 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #0F172A;
+            --primary: #0F172A;
             --accent-blue: #0284C7;
+            --accent-cyan: #00E5FF;
+            --accent-gold: #D97706;
             --text-dark: #1E293B;
             --text-muted: #475569;
             --bg-light: #F8FAFC;
             --border-color: #E2E8F0;
+            --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
         }
 
         * {
@@ -24,224 +27,347 @@
         }
 
         body {
-            background-color: #F1F5F9;
+            background-color: #0A0E17;
+            background-image:
+                radial-gradient(circle at 15% 20%, rgba(0, 229, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 60%, rgba(0, 230, 118, 0.08) 0%, transparent 40%);
             color: var(--text-dark);
             line-height: 1.5;
             padding: 40px 20px;
-        }
-
-        .cv-container {
-            max-width: 850px;
-            margin: 0 auto;
-            background: #FFFFFF;
-            padding: 45px 50px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            position: relative;
+            min-height: 100vh;
         }
 
         /* Top Action Bar (Non stampabile) */
         .no-print-bar {
-            max-width: 850px;
-            margin: 0 auto 20px;
+            max-width: 900px;
+            margin: 0 auto 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 14px 24px;
+            border-radius: 14px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .no-print-bar span {
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .print-btn {
-            background: #0284C7;
+            background: linear-gradient(135deg, #0284C7, #0369A1);
             color: #FFFFFF;
             border: none;
             padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 700;
+            border-radius: 10px;
+            font-weight: 800;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             font-size: 0.95rem;
-            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
-            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
+            transition: all 0.25s ease;
         }
 
         .print-btn:hover {
-            background: #0369A1;
             transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(2, 132, 199, 0.6);
+            background: linear-gradient(135deg, #00E676, #0284C7);
+            color: #0F172A;
         }
 
-        /* CV Header */
-        .cv-header {
-            border-bottom: 2px solid var(--accent-blue);
-            padding-bottom: 24px;
-            margin-bottom: 28px;
+        /* CV Main Container */
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        /* CV Header (Sleek Dark Navy Banner) */
+        .cv-header-banner {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: #FFFFFF;
+            padding: 40px 48px;
+            position: relative;
+            border-bottom: 4px solid var(--accent-gold);
+        }
+
+        .header-top-row {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            gap: 20px;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
         }
 
-        .header-text h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--primary-color);
+        .header-title-box h1 {
+            font-size: 2.3rem;
+            font-weight: 900;
             letter-spacing: -0.5px;
+            color: #FFFFFF;
             margin-bottom: 4px;
         }
 
-        .header-text h2 {
+        .header-title-box h2 {
             font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--accent-blue);
-            margin-bottom: 14px;
+            font-weight: 700;
+            color: #38BDF8;
+            margin-bottom: 16px;
         }
 
-        .contact-list {
+        .header-badges {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px 20px;
-            font-size: 0.88rem;
-            color: var(--text-muted);
+            gap: 8px;
         }
 
-        .contact-item {
-            display: flex;
+        .role-badge {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #F1F5F9;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            display: inline-flex;
             align-items: center;
             gap: 6px;
-            color: var(--text-muted);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px 20px;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .contact-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #E2E8F0;
             text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
         }
 
-        .contact-item i {
-            color: var(--accent-blue);
+        .contact-pill i {
+            color: #38BDF8;
+            width: 18px;
+            text-align: center;
         }
 
-        /* Sections */
+        .contact-pill:hover {
+            color: #38BDF8;
+        }
+
+        /* Body Body Content */
+        .cv-body {
+            padding: 40px 48px;
+        }
+
         .cv-section {
-            margin-bottom: 26px;
+            margin-bottom: 32px;
         }
 
         .section-title {
             font-size: 1.15rem;
             font-weight: 800;
-            color: var(--primary-color);
+            color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 14px;
+            letter-spacing: 0.8px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 6px;
+            gap: 12px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
         }
 
         .section-title i {
             color: var(--accent-blue);
-            font-size: 1.1rem;
+            background: #E0F2FE;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
         }
 
         .profile-p {
-            font-size: 0.95rem;
+            font-size: 0.96rem;
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.65;
+            background: var(--bg-light);
+            border-left: 4px solid var(--accent-blue);
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
         }
 
-        /* Skill Grid */
-        .skills-compact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 12px;
+        /* Tech Tags Pills Grid */
+        .skills-tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
         }
 
-        .skill-group-box {
+        .tech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.84rem;
+            font-weight: 700;
+            border: 1px solid var(--border-color);
+            background: #FFFFFF;
+            color: var(--primary);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        }
+
+        .tech-pill i {
+            font-size: 1rem;
+        }
+
+        .pill-flutter { background: #E0F2FE; color: #0284C7; border-color: #BAE6FD; }
+        .pill-swift { background: #FFEDD5; color: #C2410C; border-color: #FED7AA; }
+        .pill-python { background: #FEF3C7; color: #B45309; border-color: #FDE68A; }
+        .pill-stripe { background: #F3E8FF; color: #6B21A8; border-color: #E9D5FF; }
+        .pill-node { background: #DCFCE7; color: #15803D; border-color: #BBF7D0; }
+        .pill-firebase { background: #FEF9C3; color: #854D0E; border-color: #FEF08A; }
+
+        /* Experience Projects Cards */
+        .exp-card {
             background: var(--bg-light);
             border: 1px solid var(--border-color);
-            padding: 12px 16px;
-            border-radius: 8px;
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin-bottom: 18px;
+            transition: all 0.25s ease;
         }
 
-        .skill-group-box strong {
-            display: block;
-            font-size: 0.88rem;
-            color: var(--primary-color);
-            margin-bottom: 4px;
-        }
-
-        .skill-group-box span {
-            font-size: 0.84rem;
-            color: var(--text-muted);
-        }
-
-        /* Experience Item */
-        .exp-item {
-            margin-bottom: 20px;
+        .exp-card:hover {
+            border-color: var(--accent-blue);
+            box-shadow: var(--card-shadow);
         }
 
         .exp-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
             flex-wrap: wrap;
+            gap: 8px;
         }
 
         .exp-role-title {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--primary-color);
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .exp-sub {
-            font-size: 0.88rem;
+            font-size: 0.86rem;
             color: var(--accent-blue);
-            font-weight: 600;
+            font-weight: 700;
+            background: #E0F2FE;
+            padding: 3px 10px;
+            border-radius: 6px;
         }
 
         .exp-bullets {
             list-style: none;
-            padding-left: 0;
             display: flex;
             flex-direction: column;
-            gap: 6px;
-            margin-top: 6px;
+            gap: 8px;
+            margin-top: 10px;
         }
 
         .exp-bullets li {
             font-size: 0.9rem;
             color: var(--text-dark);
             position: relative;
-            padding-left: 18px;
+            padding-left: 20px;
             line-height: 1.5;
         }
 
         .exp-bullets li::before {
-            content: "•";
-            color: var(--accent-blue);
-            font-weight: bold;
+            content: "✓";
+            color: #10B981;
+            font-weight: 900;
             position: absolute;
             left: 0;
-            font-size: 1.2rem;
-            line-height: 1;
-            top: 1px;
+            font-size: 0.95rem;
+            top: 0;
         }
 
+        .exp-mini-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 14px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .exp-mini-tags span {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* Education Grid */
         .edu-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 16px;
         }
 
         .edu-card {
             background: var(--bg-light);
             border: 1px solid var(--border-color);
-            padding: 14px 18px;
-            border-radius: 8px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .edu-card i {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            margin-top: 2px;
         }
 
         .edu-card strong {
             display: block;
-            font-size: 0.92rem;
-            color: var(--primary-color);
+            font-size: 0.95rem;
+            color: var(--primary);
+            margin-bottom: 2px;
         }
 
         .edu-card span {
@@ -249,7 +375,7 @@
             color: var(--text-muted);
         }
 
-        /* Print CSS Rules */
+        /* Print Optimization */
         @media print {
             body {
                 background: none;
@@ -257,14 +383,21 @@
             }
 
             .no-print-bar {
-                display: none;
+                display: none !important;
             }
 
             .cv-container {
                 box-shadow: none;
-                padding: 0;
                 border-radius: 0;
                 max-width: 100%;
+            }
+
+            .cv-header-banner {
+                padding: 30px 36px;
+            }
+
+            .cv-body {
+                padding: 30px 36px;
             }
 
             a {
@@ -278,7 +411,7 @@
 
     <!-- Bar per Stampa/PDF (Visibile solo a schermo) -->
     <div class="no-print-bar">
-        <span style="font-size: 0.9rem; color: #475569; font-weight: 600;">📄 Curriculum Vitae Professionale — Antonio Scagnetti</span>
+        <span><i class="fas fa-file-pdf" style="color: #00E676; font-size: 1.2rem;"></i> Curriculum Vitae Professionale — Antonio Scagnetti</span>
         <button class="print-btn" onclick="window.print()">
             <i class="fas fa-print"></i> Stampa o Salva in PDF
         </button>
@@ -287,131 +420,150 @@
     <!-- CV Main Container -->
     <div class="cv-container">
 
-        <!-- Header -->
-        <header class="cv-header">
-            <div class="header-text">
-                <h1>ANTONIO SCAGNETTI</h1>
-                <h2>Mobile & Full-Stack Developer | iOS, Android, E-Commerce & Python</h2>
-
-                <div class="contact-list">
-                    <span class="contact-item"><i class="fas fa-map-marker-alt"></i> Napoli, Italia</span>
-                    <a href="tel:+393717358832" class="contact-item"><i class="fas fa-phone"></i> +39 371 7358832</a>
-                    <a href="mailto:neosdeveloper1344@gmail.com" class="contact-item"><i class="fas fa-envelope"></i> neosdeveloper1344@gmail.com</a>
-                    <a href="https://aristide-dev-web.github.io/aristide-portfolio" target="_blank" class="contact-item"><i class="fas fa-globe"></i> Portfolio Web</a>
-                    <a href="https://github.com/aristide-dev-web" target="_blank" class="contact-item"><i class="fab fa-github"></i> GitHub</a>
+        <!-- Header Banner -->
+        <header class="cv-header-banner">
+            <div class="header-top-row">
+                <div class="header-title-box">
+                    <h1>ANTONIO SCAGNETTI</h1>
+                    <h2>Mobile & Full-Stack Developer | iOS, Android, E-Commerce & Python</h2>
+                    <div class="header-badges">
+                        <span class="role-badge"><i class="fab fa-apple"></i> iOS & Swift</span>
+                        <span class="role-badge"><i class="fab fa-android"></i> Android & Kotlin</span>
+                        <span class="role-badge"><i class="fab fa-flutter"></i> Flutter & Dart</span>
+                        <span class="role-badge"><i class="fab fa-stripe"></i> Stripe E-Commerce</span>
+                        <span class="role-badge"><i class="fab fa-python"></i> Python & Security</span>
+                    </div>
                 </div>
+            </div>
+
+            <div class="contact-grid">
+                <span class="contact-pill"><i class="fas fa-map-marker-alt"></i> Napoli, Italia</span>
+                <a href="tel:+393717358832" class="contact-pill"><i class="fas fa-phone"></i> +39 371 7358832</a>
+                <a href="mailto:neosdeveloper1344@gmail.com" class="contact-pill"><i class="fas fa-envelope"></i> neosdeveloper1344@gmail.com</a>
+                <a href="https://aristide-dev-web.github.io/aristide-portfolio" target="_blank" class="contact-pill"><i class="fas fa-globe"></i> Portfolio Web</a>
+                <a href="https://github.com/aristide-dev-web" target="_blank" class="contact-pill"><i class="fab fa-github"></i> GitHub Profile</a>
             </div>
         </header>
 
-        <!-- Profilo Professionale -->
-        <section class="cv-section">
-            <h3 class="section-title"><i class="fas fa-user-tie"></i> Profilo Professionale</h3>
-            <p class="profile-p">
-                Software Developer orientato ai risultati con comprovata esperienza nello sviluppo mobile cross-platform (<strong>Flutter, Dart, Swift, Kotlin</strong>) e nella progettazione web full-stack (<strong>JavaScript, Node.js, Python, Stripe E-Commerce</strong>). Autore di applicazioni pubblicate su <strong>Apple App Store</strong> e <strong>Google Play Store</strong> e gestore di piattaforme web con pagamenti digitali e sistemi di booking automatizzati.
-            </p>
-        </section>
+        <!-- Body Content -->
+        <div class="cv-body">
 
-        <!-- Competenze Tecniche -->
-        <section class="cv-section">
-            <h3 class="section-title"><i class="fas fa-code"></i> Competenze Tecniche</h3>
-            <div class="skills-compact-grid">
-                <div class="skill-group-box">
-                    <strong>📱 Mobile & Frontend</strong>
-                    <span>Flutter, Dart, Swift (iOS / Xcode), Kotlin (Android Studio), JS ES6+, HTML5/CSS3</span>
-                </div>
-                <div class="skill-group-box">
-                    <strong>⚙️ Backend & Database</strong>
-                    <span>Node.js, Express, Python, Firebase (Auth, Firestore, FCM), Hive DB, REST API</span>
-                </div>
-                <div class="skill-group-box">
-                    <strong>💳 E-Commerce & Logistics</strong>
-                    <span>Stripe Payments API, WhatsApp Business API, SheetJS (Excel Parser .xlsx/.csv)</span>
-                </div>
-                <div class="skill-group-box">
-                    <strong>🛡️ DevOps, Security & Tools</strong>
-                    <span>Git & GitHub, Tailscale VPN, RTSP Video Streaming, Cybersecurity, AI Development Tools</span>
-                </div>
-            </div>
-        </section>
+            <!-- Profilo Professionale -->
+            <section class="cv-section">
+                <h3 class="section-title"><i class="fas fa-user-tie"></i> Profilo Professionale</h3>
+                <p class="profile-p">
+                    Software Developer orientato ai risultati con comprovata esperienza nello sviluppo mobile cross-platform (<strong>Flutter, Dart, Swift, Kotlin</strong>) e nella progettazione web full-stack (<strong>JavaScript, Node.js, Python, Stripe E-Commerce</strong>). Autore di applicazioni pubblicate sugli store ufficiali <strong>Apple App Store</strong> e <strong>Google Play Store</strong> e gestore di piattaforme e-commerce con pagamenti digitali e booking automatizzato.
+                </p>
+            </section>
 
-        <!-- Esperienze & Progetti Reali -->
-        <section class="cv-section">
-            <h3 class="section-title"><i class="fas fa-briefcase"></i> Progetti & Sviluppi Reali</h3>
+            <!-- Competenze Tecniche -->
+            <section class="cv-section">
+                <h3 class="section-title"><i class="fas fa-code"></i> Stack Tecnologico & Competenze</h3>
+                <div class="skills-tag-container">
+                    <span class="tech-pill pill-flutter"><i class="fab fa-flutter"></i> Flutter & Dart</span>
+                    <span class="tech-pill pill-swift"><i class="fab fa-swift"></i> Swift & iOS (Xcode)</span>
+                    <span class="tech-pill"><i class="fab fa-android" style="color: #3DDC84;"></i> Android & Kotlin</span>
+                    <span class="tech-pill pill-python"><i class="fab fa-python"></i> Python & NVR Scripting</span>
+                    <span class="tech-pill pill-stripe"><i class="fab fa-stripe"></i> Stripe Payment Gateway</span>
+                    <span class="tech-pill pill-node"><i class="fab fa-node-js"></i> Node.js & Express API</span>
+                    <span class="tech-pill pill-firebase"><i class="fas fa-fire"></i> Firebase (Auth, Firestore, FCM)</span>
+                    <span class="tech-pill"><i class="fab fa-js" style="color: #F7DF1E;"></i> JavaScript ES6+</span>
+                    <span class="tech-pill"><i class="fas fa-file-excel" style="color: #10B981;"></i> SheetJS / Excel Data Parser</span>
+                    <span class="tech-pill"><i class="fas fa-shield-alt" style="color: #6366F1;"></i> Cybersecurity & Tailscale VPN</span>
+                    <span class="tech-pill"><i class="fab fa-git-alt" style="color: #F05032;"></i> Git & GitHub Workflow</span>
+                </div>
+            </section>
 
-            <!-- Project 1: Pet Unite -->
-            <div class="exp-item">
-                <div class="exp-header">
-                    <div>
+            <!-- Esperienze & Progetti Reali -->
+            <section class="cv-section">
+                <h3 class="section-title"><i class="fas fa-briefcase"></i> Progetti & Sviluppi Reali</h3>
+
+                <!-- Project 1: Pet Unite -->
+                <div class="exp-card">
+                    <div class="exp-header">
                         <div class="exp-role-title">🐾 Pet Unite — Mobile App Cross-Platform (iOS & Android)</div>
-                        <div class="exp-sub">Autore & Lead Mobile Developer | Live su Apple App Store & Google Play Store</div>
+                        <div class="exp-sub"><i class="fab fa-apple"></i> App Store & <i class="fab fa-google-play"></i> Play Store</div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Progettazione, sviluppo e pubblicazione autonoma dell'applicazione mobile Flutter per la tutela animale.</li>
+                        <li>Implementazione Mappa Smarrimenti in tempo reale integrata con Google Maps API e geolocalizzazione.</li>
+                        <li>Architettura data ibrida: Hive DB locale per velocità istantanea e Firebase Firestore per notifiche push background.</li>
+                        <li>Sviluppo sistema di ricerca e booking Pet-Sitter nella propria zona con chat integrata tra utenti.</li>
+                    </ul>
+                    <div class="exp-mini-tags">
+                        <span>Flutter</span><span>Dart</span><span>Firebase Chat</span><span>Google Maps API</span><span>Hive DB</span><span>iOS / Android Live</span>
                     </div>
                 </div>
-                <ul class="exp-bullets">
-                    <li>Progettazione e pubblicazione autonoma dell'applicazione mobile Flutter per la tutela e gestione degli animali domestici.</li>
-                    <li>Sviluppo Mappa Smarrimenti in tempo reale integrata con Google Maps API e geolocalizzazione avanzata.</li>
-                    <li>Implementazione architettura data ibrida (Hive DB locale per velocità istantanea + Firebase Firestore per notifiche push background).</li>
-                    <li>Creazione sistema di ricerca e booking Pet-Sitter nella propria zona con chat integrata tra utenti.</li>
-                </ul>
-            </div>
 
-            <!-- Project 2: Sicily Palermo Tour -->
-            <div class="exp-item">
-                <div class="exp-header">
-                    <div>
+                <!-- Project 2: Sicily Palermo Tour -->
+                <div class="exp-card">
+                    <div class="exp-header">
                         <div class="exp-role-title">🏝️ Sicily Palermo Tour — Piattaforma E-Commerce & Booking Platform</div>
-                        <div class="exp-sub">Full-Stack & E-Commerce Developer | Live su sicilypalermotours.com</div>
+                        <div class="exp-sub"><i class="fas fa-globe"></i> Live su sicilypalermotours.com</div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Sviluppo e gestione dell'architettura e-commerce per la prenotazione online di tour guidati ed escursioni.</li>
+                        <li>Integrazione end-to-end del gateway di pagamento <strong>Stripe API</strong> (carte credito/debito, Apple Pay, notifiche ricevute).</li>
+                        <li>Implementazione modulo viaggi in bus con scelta orari, fermate e Pannello Admin per la gestione degli incassi.</li>
+                    </ul>
+                    <div class="exp-mini-tags">
+                        <span>E-Commerce</span><span>Stripe API</span><span>JavaScript ES6+</span><span>Admin Panel</span><span>WhatsApp API</span>
                     </div>
                 </div>
-                <ul class="exp-bullets">
-                    <li>Sviluppo e gestione dell'architettura e-commerce per la prenotazione online di tour guidati ed escursioni.</li>
-                    <li>Integrazione end-to-end del gateway di pagamento <strong>Stripe API</strong> (carte credito/debito, Apple Pay, notifiche ricevute).</li>
-                    <li>Implementazione modulo viaggi in bus con scelta orari, fermate (Palermo, Villabate, Bagheria) e Pannello Admin per gestione incassi.</li>
-                </ul>
-            </div>
 
-            <!-- Project 3: Excel Manager -->
-            <div class="exp-item">
-                <div class="exp-header">
-                    <div>
+                <!-- Project 3: Excel Manager -->
+                <div class="exp-card">
+                    <div class="exp-header">
                         <div class="exp-role-title">📊 Excel Tour Operator Manager — Web App Logistica Operativa</div>
-                        <div class="exp-sub">Software Developer | Open Source su GitHub</div>
+                        <div class="exp-sub"><i class="fab fa-github"></i> Open Source Repository</div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Sviluppo web app per l'elaborazione client-side di elenchi passeggeri in formato <code>.xlsx</code> e <code>.csv</code> senza server esterni.</li>
+                        <li>Implementazione modulo spunta presenze sul campo in tempo reale, gestione tavoli al ristorante e conteggio tassa di soggiorno.</li>
+                    </ul>
+                    <div class="exp-mini-tags">
+                        <span>JavaScript ES6+</span><span>SheetJS</span><span>Excel Parser</span><span>PDF Export</span><span>Logistics</span>
                     </div>
                 </div>
-                <ul class="exp-bullets">
-                    <li>Sviluppo web app per l'elaborazione client-side di elenchi passeggeri in formato <code>.xlsx</code> e <code>.csv</code> senza server esterni.</li>
-                    <li>Implementazione modulo spunta presenze sul campo in tempo reale, gestione tavoli al ristorante e conteggio tassa di soggiorno.</li>
-                </ul>
-            </div>
 
-            <!-- Project 4: WAN Security Server -->
-            <div class="exp-item">
-                <div class="exp-header">
-                    <div>
+                <!-- Project 4: WAN Security Server -->
+                <div class="exp-card">
+                    <div class="exp-header">
                         <div class="exp-role-title">🛡️ WAN Security Server — NVR Personale & Videosorveglianza</div>
-                        <div class="exp-sub">Backend & Security Engineer | Open Source su GitHub</div>
+                        <div class="exp-sub"><i class="fab fa-github"></i> Open Source Repository</div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Sviluppo in <strong>Python</strong> di un server NVR per registrazione e streaming H.264/RTSP H24 di telecamere IP (TP-Link Tapo).</li>
+                        <li>Cifratura comunicazioni WAN tramite tunnel VPN Tailscale per accesso remoto sicuro da iPhone e script Watchdog 24/7.</li>
+                    </ul>
+                    <div class="exp-mini-tags">
+                        <span>Python</span><span>RTSP Video</span><span>Tailscale VPN</span><span>Networking WAN</span><span>Watchdog Automation</span>
                     </div>
                 </div>
-                <ul class="exp-bullets">
-                    <li>Sviluppo in <strong>Python</strong> di un server NVR per registrazione e streaming H.264/RTSP H24 di telecamere IP (TP-Link Tapo).</li>
-                    <li>Cifratura comunicazioni WAN tramite tunnel VPN Tailscale per accesso remoto sicuro da iPhone e script Watchdog 24/7.</li>
-                </ul>
-            </div>
-        </section>
+            </section>
 
-        <!-- Istruzione -->
-        <section class="cv-section" style="margin-bottom: 0;">
-            <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Istruzione & Formazione</h3>
-            <div class="edu-grid">
-                <div class="edu-card">
-                    <strong>Diploma di Perito in Informatica e Telecomunicazioni</strong>
-                    <span>ITIS — Voto: 75/100</span>
+            <!-- Istruzione -->
+            <section class="cv-section" style="margin-bottom: 0;">
+                <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Istruzione & Formazione</h3>
+                <div class="edu-grid">
+                    <div class="edu-card">
+                        <i class="fas fa-school"></i>
+                        <div>
+                            <strong>Diploma di Perito in Informatica e Telecomunicazioni</strong>
+                            <span>ITIS — Voto: 75/100</span>
+                        </div>
+                    </div>
+                    <div class="edu-card">
+                        <i class="fas fa-laptop-code"></i>
+                        <div>
+                            <strong>Formazione Tecnica Continuativa (Autodidatta)</strong>
+                            <span>Focus: Flutter & Swift iOS, Node.js Backend, Stripe APIs, Cybersecurity & Cloud</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="edu-card">
-                    <strong>Formazione Tecnica Continuativa (Autodidatta)</strong>
-                    <span>Focus: Flutter & Swift iOS, Node.js Backend, Stripe APIs, Cybersecurity & Cloud</span>
-                </div>
-            </div>
-        </section>
+            </section>
+
+        </div>
 
     </div>
 
