@@ -396,8 +396,8 @@
         /* Print Optimization */
         @media print {
             @page {
-                margin: 8mm;
-                size: A4;
+                margin: 8mm 10mm;
+                size: A4 portrait;
             }
 
             body {
@@ -418,23 +418,48 @@
             }
 
             .cv-header-banner {
-                padding: 20px 28px !important;
+                padding: 18px 24px !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .contact-grid {
+                margin-top: 10px !important;
+                padding-top: 8px !important;
+            }
+
+            .cv-portfolio-banner {
+                padding: 8px 12px !important;
+                margin-top: 10px !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
 
             .cv-body {
-                padding: 20px 28px !important;
+                padding: 18px 24px !important;
             }
 
             .cv-section {
-                margin-bottom: 16px !important;
-                page-break-inside: auto !important;
-            }
-
-            .skills-tag-container, .profile-p, .edu-card {
+                margin-bottom: 14px !important;
                 page-break-inside: avoid !important;
                 break-inside: avoid !important;
+            }
+
+            .profile-p {
+                padding: 10px 14px !important;
+            }
+
+            .skills-tag-container {
+                gap: 6px !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .tech-pill, .role-badge {
+                padding: 4px 10px !important;
+                font-size: 0.78rem !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
 
             .exp-card {
@@ -444,16 +469,10 @@
                 break-inside: avoid !important;
             }
 
-            .cv-portfolio-banner {
-                padding: 10px 14px !important;
-                margin-top: 12px !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            .tech-pill, .role-badge {
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
+            /* Forziamo la sezione Progetti ad iniziare in cima a Pagina 2 */
+            .cv-section-projects {
+                page-break-before: always !important;
+                break-before: page !important;
             }
 
             a {
@@ -554,7 +573,7 @@
             </section>
 
             <!-- Esperienze & Progetti Reali -->
-            <section class="cv-section">
+            <section class="cv-section cv-section-projects">
                 <h3 class="section-title"><i class="fas fa-briefcase"></i> Progetti & Sviluppi Reali</h3>
 
                 <!-- Project 1: Pet Unite -->
@@ -650,11 +669,12 @@
         function downloadPdfDirect() {
             const element = document.querySelector('.cv-container');
             const opt = {
-                margin:       [6, 6, 6, 6],
+                margin:       [5, 5, 5, 5],
                 filename:     'Curriculum_Vitae_Antonio_Scagnetti.pdf',
                 image:        { type: 'jpeg', quality: 0.98 },
                 html2canvas:  { scale: 2, useCORS: true, logging: false },
-                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
             };
 
             // Genera e scarica direttamente il file nella cartella Download!
