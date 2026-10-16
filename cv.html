@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Antonio Scagnetti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0F172A;
+            --accent-blue: #0284C7;
+            --text-dark: #1E293B;
+            --text-muted: #475569;
+            --bg-light: #F8FAFC;
+            --border-color: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #F1F5F9;
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+
+        .cv-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 45px 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        /* Top Action Bar (Non stampabile) */
+        .no-print-bar {
+            max-width: 850px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .print-btn {
+            background: #0284C7;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .print-btn:hover {
+            background: #0369A1;
+            transform: translateY(-2px);
+        }
+
+        /* CV Header */
+        .cv-header {
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 24px;
+            margin-bottom: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .header-text h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .header-text h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-bottom: 14px;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .contact-item i {
+            color: var(--accent-blue);
+        }
+
+        /* Sections */
+        .cv-section {
+            margin-bottom: 26px;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6px;
+        }
+
+        .section-title i {
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+        }
+
+        .profile-p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Skill Grid */
+        .skills-compact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 12px;
+        }
+
+        .skill-group-box {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            border-radius: 8px;
+        }
+
+        .skill-group-box strong {
+            display: block;
+            font-size: 0.88rem;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+        }
+
+        .skill-group-box span {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+        }
+
+        /* Experience Item */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+        }
+
+        .exp-role-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .exp-sub {
+            font-size: 0.88rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .exp-bullets {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .exp-bullets li {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            position: relative;
+            padding-left: 18px;
+            line-height: 1.5;
+        }
+
+        .exp-bullets li::before {
+            content: "•";
+            color: var(--accent-blue);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            line-height: 1;
+            top: 1px;
+        }
+
+        .edu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .edu-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 14px 18px;
+            border-radius: 8px;
+        }
+
+        .edu-card strong {
+            display: block;
+            font-size: 0.92rem;
+            color: var(--primary-color);
+        }
+
+        .edu-card span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Print CSS Rules */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+
+            .no-print-bar {
+                display: none;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                padding: 0;
+                border-radius: 0;
+                max-width: 100%;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bar per Stampa/PDF (Visibile solo a schermo) -->
+    <div class="no-print-bar">
+        <span style="font-size: 0.9rem; color: #475569; font-weight: 600;">📄 Curriculum Vitae Professionale — Antonio Scagnetti</span>
+        <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Stampa o Salva in PDF
+        </button>
+    </div>
+
+    <!-- CV Main Container -->
+    <div class="cv-container">
+
+        <!-- Header -->
+        <header class="cv-header">
+            <div class="header-text">
+                <h1>ANTONIO SCAGNETTI</h1>
+                <h2>Mobile & Full-Stack Developer | iOS, Android, E-Commerce & Python</h2>
+
+                <div class="contact-list">
+                    <span class="contact-item"><i class="fas fa-map-marker-alt"></i> Napoli, Italia</span>
+                    <a href="tel:+393717358832" class="contact-item"><i class="fas fa-phone"></i> +39 371 7358832</a>
+                    <a href="mailto:neosdeveloper1344@gmail.com" class="contact-item"><i class="fas fa-envelope"></i> neosdeveloper1344@gmail.com</a>
+                    <a href="https://aristide-dev-web.github.io/aristide-portfolio" target="_blank" class="contact-item"><i class="fas fa-globe"></i> Portfolio Web</a>
+                    <a href="https://github.com/aristide-dev-web" target="_blank" class="contact-item"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Profilo Professionale -->
+        <section class="cv-section">
+            <h3 class="section-title"><i class="fas fa-user-tie"></i> Profilo Professionale</h3>
+            <p class="profile-p">
+                Software Developer orientato ai risultati con comprovata esperienza nello sviluppo mobile cross-platform (<strong>Flutter, Dart, Swift, Kotlin</strong>) e nella progettazione web full-stack (<strong>JavaScript, Node.js, Python, Stripe E-Commerce</strong>). Autore di applicazioni pubblicate su <strong>Apple App Store</strong> e <strong>Google Play Store</strong> e gestore di piattaforme web con pagamenti digitali e sistemi di booking automatizzati.
+            </p>
+        </section>
+
+        <!-- Competenze Tecniche -->
+        <section class="cv-section">
+            <h3 class="section-title"><i class="fas fa-code"></i> Competenze Tecniche</h3>
+            <div class="skills-compact-grid">
+                <div class="skill-group-box">
+                    <strong>📱 Mobile & Frontend</strong>
+                    <span>Flutter, Dart, Swift (iOS / Xcode), Kotlin (Android Studio), JS ES6+, HTML5/CSS3</span>
+                </div>
+                <div class="skill-group-box">
+                    <strong>⚙️ Backend & Database</strong>
+                    <span>Node.js, Express, Python, Firebase (Auth, Firestore, FCM), Hive DB, REST API</span>
+                </div>
+                <div class="skill-group-box">
+                    <strong>💳 E-Commerce & Logistics</strong>
+                    <span>Stripe Payments API, WhatsApp Business API, SheetJS (Excel Parser .xlsx/.csv)</span>
+                </div>
+                <div class="skill-group-box">
+                    <strong>🛡️ DevOps, Security & Tools</strong>
+                    <span>Git & GitHub, Tailscale VPN, RTSP Video Streaming, Cybersecurity, AI Development Tools</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Esperienze & Progetti Reali -->
+        <section class="cv-section">
+            <h3 class="section-title"><i class="fas fa-briefcase"></i> Progetti & Sviluppi Reali</h3>
+
+            <!-- Project 1: Pet Unite -->
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-role-title">🐾 Pet Unite — Mobile App Cross-Platform (iOS & Android)</div>
+                        <div class="exp-sub">Autore & Lead Mobile Developer | Live su Apple App Store & Google Play Store</div>
+                    </div>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Progettazione e pubblicazione autonoma dell'applicazione mobile Flutter per la tutela e gestione degli animali domestici.</li>
+                    <li>Sviluppo Mappa Smarrimenti in tempo reale integrata con Google Maps API e geolocalizzazione avanzata.</li>
+                    <li>Implementazione architettura data ibrida (Hive DB locale per velocità istantanea + Firebase Firestore per notifiche push background).</li>
+                    <li>Creazione sistema di ricerca e booking Pet-Sitter nella propria zona con chat integrata tra utenti.</li>
+                </ul>
+            </div>
+
+            <!-- Project 2: Sicily Palermo Tour -->
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-role-title">🏝️ Sicily Palermo Tour — Piattaforma E-Commerce & Booking Platform</div>
+                        <div class="exp-sub">Full-Stack & E-Commerce Developer | Live su sicilypalermotours.com</div>
+                    </div>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Sviluppo e gestione dell'architettura e-commerce per la prenotazione online di tour guidati ed escursioni.</li>
+                    <li>Integrazione end-to-end del gateway di pagamento <strong>Stripe API</strong> (carte credito/debito, Apple Pay, notifiche ricevute).</li>
+                    <li>Implementazione modulo viaggi in bus con scelta orari, fermate (Palermo, Villabate, Bagheria) e Pannello Admin per gestione incassi.</li>
+                </ul>
+            </div>
+
+            <!-- Project 3: Excel Manager -->
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-role-title">📊 Excel Tour Operator Manager — Web App Logistica Operativa</div>
+                        <div class="exp-sub">Software Developer | Open Source su GitHub</div>
+                    </div>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Sviluppo web app per l'elaborazione client-side di elenchi passeggeri in formato <code>.xlsx</code> e <code>.csv</code> senza server esterni.</li>
+                    <li>Implementazione modulo spunta presenze sul campo in tempo reale, gestione tavoli al ristorante e conteggio tassa di soggiorno.</li>
+                </ul>
+            </div>
+
+            <!-- Project 4: WAN Security Server -->
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-role-title">🛡️ WAN Security Server — NVR Personale & Videosorveglianza</div>
+                        <div class="exp-sub">Backend & Security Engineer | Open Source su GitHub</div>
+                    </div>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Sviluppo in <strong>Python</strong> di un server NVR per registrazione e streaming H.264/RTSP H24 di telecamere IP (TP-Link Tapo).</li>
+                    <li>Cifratura comunicazioni WAN tramite tunnel VPN Tailscale per accesso remoto sicuro da iPhone e script Watchdog 24/7.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Istruzione -->
+        <section class="cv-section" style="margin-bottom: 0;">
+            <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Istruzione & Formazione</h3>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <strong>Diploma di Perito in Informatica e Telecomunicazioni</strong>
+                    <span>ITIS — Voto: 75/100</span>
+                </div>
+                <div class="edu-card">
+                    <strong>Formazione Tecnica Continuativa (Autodidatta)</strong>
+                    <span>Focus: Flutter & Swift iOS, Node.js Backend, Stripe APIs, Cybersecurity & Cloud</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
